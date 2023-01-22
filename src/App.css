@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+.App {
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  width: 500px !important;
+  padding: 0.7em;
+}
+.two {
+  margin-top: 1.5em;
+}
+.strength {
+  background-color: #24232b;
+  padding: 1.3em;
+}
+
+@media(max-width:600px){
+  .container{
+    width: 90vw !important;
+  }
+}
