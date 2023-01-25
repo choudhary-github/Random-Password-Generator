@@ -3,7 +3,7 @@ import { FormControlLabel, FormGroup, Checkbox } from "@mui/material";
 
 function CheckboxComp({ label, value, onChange, name }) {
   return (
-    <FormControlLabel
+    <FormControlLabel className="formControlLabel"
       sx={{
         letterSpacing: 1,
       }}
@@ -13,6 +13,7 @@ function CheckboxComp({ label, value, onChange, name }) {
         checked={value}
         onChange={onChange}
           sx={{
+            marginRight:1 ,
             "&.Mui-checked": {
               color: "success.light",
             },

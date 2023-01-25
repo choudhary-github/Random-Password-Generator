@@ -10,6 +10,7 @@ import {
   createTheme,
   ThemeProvider,
   FormGroup,
+  SvgIcon,
 } from "@mui/material";
 import React from "react";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
@@ -18,6 +19,7 @@ import "./App.css";
 import CheckboxComp from "./components/Checkbox";
 import { useState, useRef } from "react";
 import copy from "copy-to-clipboard";
+import Svg from "./components/Svg";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -47,7 +49,9 @@ function App() {
 
   function handleClick() {
     const password = generatePassword(uppercase, lowercase, numbers, symbols);
-    password !== undefined && value !== 0 ? (ref.current.innerText = password) : "";
+    password !== undefined && value !== 0
+      ? (ref.current.innerText = password)
+      : "";
     setCopyText(password);
   }
 
@@ -199,7 +203,15 @@ function App() {
               </FormGroup>
             </ThemeProvider>
 
-            <Box className="strength" mt={2}>
+            <Box
+              className="strength"
+              mt={2}
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
               <Typography
                 sx={{
                   letterSpacing: 1,
@@ -209,6 +221,12 @@ function App() {
               >
                 STRENGTH
               </Typography>
+              <Box sx={{ mt: 1 }}>
+                <Svg color={uppercase ? "#4caf50" : "none"} />
+                <Svg color={lowercase ? "#4caf50" : "none"} />
+                <Svg color={numbers ? "#4caf50" : "none"} />
+                <Svg color={symbols ? "#4caf50" : "none"} />
+              </Box>
             </Box>
 
             <Box mt={3} mb={2}>
